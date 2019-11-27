@@ -84,7 +84,8 @@ fs.readFile('./readme.txt', (err, data)=>{
 fs.writeFile('./writeme.txt', 내용을 적어주세요,(err,data)=>{
   if(err) throw err;
 });
-
+<code>
+</pre>
 
 ### 버퍼와 스트림
 <pre>
@@ -97,6 +98,14 @@ fs.writeFile('./writeme.txt', 내용을 적어주세요,(err,data)=>{
 
 
 const data = []
+const writeStream = fs.createWriteStream("쓸파일경로");
+writeStream.write("asdA");
+writeStream.write("asoioijoij6198194716");
+writeStream.end();
+writeStream.on("finish",()=>{
+  console.log("쓰기종료");
+})
+
 const readStream =  fs.createReadStream('./write.txt', {highWaterMark:16}) 16 byte씩 옴긴다.
 readStream.on('data', (chuck) => {
   // 16바이트가 차서왔다 하면 이벤트 발생.
@@ -114,24 +123,10 @@ readStream.on('error', (err) => {
   console.log(err)
 }
 
-
-
-</code>
-</pre>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//복사
+1 ) readStream.pip(writeStream);
+2 ) fs.copyFile("d이거","이거로", (err)=>{})
 
 </code>
 </pre>
+
