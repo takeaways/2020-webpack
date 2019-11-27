@@ -68,3 +68,70 @@ crypto.randomBytes(64, (err, buff) =>{
 
 ### util.promisify(콜백 있는함수 )
 그러면 프로미스로 바뀐다!
+
+### fs
+<pre>
+<code>
+const fs = require('fs');
+
+//파일 읽기.
+fs.readFile('./readme.txt', (err, data)=>{
+  if(err) throw err;
+  console.log(data) // 버퍼 : 컴퓨터가 알아 듣는 코드
+  console.log(data.toString());
+})
+
+fs.writeFile('./writeme.txt', 내용을 적어주세요,(err,data)=>{
+  if(err) throw err;
+});
+
+
+### 버퍼와 스트림
+<pre>
+<code>
+                        buffer 다차면 전달 (버퍼링)
+완전 큰 데이터 -------->[ 조금씩 버퍼에 담는다 ] ------> 전달 * 
+
+스트림 : 버퍼를 전달 하는 행위
+ [  ] -------> [   ] ------>
+
+
+const data = []
+const readStream =  fs.createReadStream('./write.txt', {highWaterMark:16}) 16 byte씩 옴긴다.
+readStream.on('data', (chuck) => {
+  // 16바이트가 차서왔다 하면 이벤트 발생.
+  data.push(chuck) // 16byte씩 오면 데이터 쌓기.
+});
+
+
+readStream.on('end', ()=>{
+console.log("끝")
+// global 객체 버퍼(Buffer)
+console.log(Buffer.concat(data).toString())
+});
+
+readStream.on('error', (err) => {
+  console.log(err)
+}
+
+
+
+</code>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</code>
+</pre>
