@@ -41,3 +41,27 @@ console.log(path.resolve(__dirname, "..", "/user")); //절대경로 인식
 
 
 ### url
+<pre>
+<code>
+----------------------------href-------------------------------------
+protocal ----------------host-----------------path--search-------
+-------------------------hostname-----port-----------------------
+-------------origin-------------------------
+http://username:password@www.naver.com:8080/a/b/c/?query=string/#hash
+</code>
+</pre>
+
+### crypto 단방향 암호화 ( 해시 ) 복호화 불가능
+<pre>
+<code>
+const crpyro = require('crypto');
+crypto.createHash('sha512').update("password").digest('base64');
+
+crypto.randomBytes(64, (err, buff) =>{
+  const salt = buff.toString('base64');
+  crypto.pbkdf2("password", salt, 193872, 64, 'sha512', (err,key)=>{
+    console.log(key.toString('base64');
+  })
+})
+</code>
+</pre>
