@@ -84,7 +84,7 @@ fs.readFile('./readme.txt', (err, data)=>{
 fs.writeFile('./writeme.txt', 내용을 적어주세요,(err,data)=>{
   if(err) throw err;
 });
-<code>
+</code>
 </pre>
 
 ### 버퍼와 스트림
@@ -130,3 +130,35 @@ readStream.on('error', (err) => {
 </code>
 </pre>
 
+### event 모듈
+<pre>
+<code>
+const EventEmitter = require('events');
+const myEvent = new EventEmitter();
+
+myEvent.addListener('방문', () => {
+  console.log('방문 떙쿠);
+})
+
+myEvent.on('방문', () => {
+  console.log("방문 땡쿠 별명이야 똑같앙");
+})
+
+myEvent.on('종료', () => {
+  console.log("빠이");
+});
+
+myEvent.once("한번만실행", () => {
+  console.log("한 번만 실행 하지");
+}); 
+
+myEvent.emit("방문");
+myEvent.emit("종료");
+myEvent.emit("한번만실행");
+
+myEvent.removeListener("방문");
+myEvent.removeListeners("방문");
+
+
+</code>
+</pre>
