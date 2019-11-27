@@ -12,12 +12,11 @@
 </code>
 </pre>
 
-<<<<<<< HEAD
-7
-=======
-1
-
-2git 
-
-3git 
->>>>>>> parent of 28f3410... 5 추가
+### __filename , __dirname, process
+<pre>
+<code>
+console.log(__dirname); 파일 폴더이름
+console.log(__filename); 파일 경로
+console.log(process); 
+</code>
+</pre>
