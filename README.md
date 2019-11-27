@@ -181,3 +181,32 @@ process.on('uncaughtException', (err)=>{})
 
 </code>
 </pre>
+
+
+### http, localhost, port
+<pre>
+<code>
+const http = require("http");
+const fs = require("fs");
+
+const server = http
+  .createServer((req, res) => {
+    fs.readFile("./write.txt", (error, data) => {
+      res.end(data);
+    });
+    // res.write("<h1>hello world</h1>");
+    // res.end();
+  })
+  .listen(8080, () => console.log(8080));
+
+server.on("listening", () => {
+  console.log("li");
+});
+
+server.on("error", e => {
+  console.error(e);
+});
+8080, () => console.log(8080));
+
+</code>
+</pre>
