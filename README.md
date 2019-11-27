@@ -65,3 +65,6 @@ crypto.randomBytes(64, (err, buff) =>{
 })
 </code>
 </pre>
+
+### util.promisify(콜백 있는함수 )
+그러면 프로미스로 바뀐다!
