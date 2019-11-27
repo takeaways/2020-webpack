@@ -162,3 +162,22 @@ myEvent.removeListeners("방문");
 
 </code>
 </pre>
+
+### 예외처리
+<pre>
+<code>
+
+function(){
+  try{
+    throw new Error("Dead");
+  }catch(e){
+    console.error(e)
+  }
+}
+
+or
+
+process.on('uncaughtException', (err)=>{})
+
+</code>
+</pre>
