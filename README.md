@@ -208,5 +208,71 @@ server.on("error", e => {
 });
 8080, () => console.log(8080));
 
+
+[cookie]
+expires
+httponly
+path
+
+</code>
+</pre>
+
+### https, http2
+<pre>
+<code>
+const https = require("https");
+https.listen(443);
+발급 인증서 필요
+letsencrypt
+
+https.createServer({
+  cert:fs.readFileSync('도메인 인증서 경로')
+  key:fs.readFileSync('도메인 비밀키 경로');
+  ca:[
+    fs.readFileSync('상위 인증서 경로'),
+    fs.readFileSync('상위 인증서 경로'),
+    fs.readFileSync('상위 인증서 경로'),
+  ]
+})
+
+
+</code>
+</pre>
+
+### 클러스터로 멀티 프로세싱 하기
+코어가 4개 달린 싱글 쓰레드인 노드를 쓰면..?? 돈이 아깝네
+1) 클러스터링 노는 코어 다쓰기! main.js
+<pre>
+<code>
+const cluster = require("cluster");
+const http = require("http");
+const os = require("os");
+const numCPUs = os.cpus().length;
+
+if (cluster.isMaster) {
+  // 관리
+  console.log("관리자 아이디 : ", process.pid);
+  for (let i = 0; i < numCPUs; i++) {
+    cluster.fork(); //새로운 워커 만들기
+  }
+
+  cluster.on("exit", (worker, code, signal) => {
+    console.log("death", worker.process.pid);
+    cluster.fork();
+  });
+} else {
+  //worker
+  http
+    .createServer((req, res) => {
+      res.end("http server");
+      setTimeout(() => {
+        process.exit(1);
+      }, 1000);
+    })
+    .listen(8080);
+  console.log(process.pid, "워커 실행");
+}
+
+
 </code>
 </pre>
