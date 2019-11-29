@@ -294,3 +294,61 @@ try{
 }
 </code>
 </pre>
+
+### mongodb
+1) 무한히 늘어 날것이다 컬렉션으로 만들기 ( 관계형 처럼)
+2) 관계는 따로 없다
+<pre>
+<code>
+
+Collection 만들기
+
+const {Schema}= mongoose;
+const {Types: ObjectId} = Schema;
+const commentSchema = new Schema({
+  commenter: {
+    type:ObjectId,
+    require:true,
+    ref:'User'
+  }
+});
+
+module.exports = mongoose.model('Comment', commentSchema);
+
+연결점 구성
+const mongoose = require('mongoose');
+
+module.exports = () => {
+
+  const connect = () => {
+    mongoose.connect('mongodb://id@pw@localhost:123/admin',{
+      dbName:'nodejs'
+    }, (error) => {
+      if(error) return console.error('connection error : " ,error);
+      console.log('connected');
+    });
+  }
+
+  connect();
+  mongoose.connection.on('error' , (e) => console.log(e));
+  mongoose.connection.on('disconnected', () => {
+    console.log('연결 끊김');
+    connect()// 재연결 시도
+  }
+
+  require('./comment') // 스크마 추가
+}
+
+연결시도 app.js
+const connect = require('./schema')
+connect();
+
+</code>
+</pre>
+
+### mongo 명령어
+1) find : 모두 찾기
+2) findOne: 하나만 찾기
+3) new 스키마.save 생성
+4) update: 수정 하기
+5) remove: 제거 하기
