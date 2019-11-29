@@ -276,3 +276,21 @@ if (cluster.isMaster) {
 
 </code>
 </pre>
+
+
+### npm 패키지 
+1) npm outdate, npm search, npm info , npm whomi
+
+### express !! 시작해보기
+1) npm i -g express-gernerator
+2) express 폴더 --view=pug || = ejs
+3) package.json 내부 scripts에 명령
+<pre>
+<code>
+try{
+}catch(e){
+  next(e) ====>> (err, req, res) =>{ 이쪽으로 바로 넘어 오게 된다.}
+                  error 파라미터가 있으면 에러 처리 미들웨어로 판단 한다
+}
+</code>
+</pre>
