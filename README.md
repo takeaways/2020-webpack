@@ -70,9 +70,46 @@ npm i webpack webpack-cli -D
 
 ## entry - from
 
+- 진업점
+
+```js
+{
+  entry: "./src/index.js";
+}
+
+entry: {
+  login: './src/LoginView.js',
+  main: './src/MainView.js'
+}
+```
+
 ## output - to
 
+```js
+{
+   output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, './dist')
+  }
+}
+
+//결과 파일 이름에 entry 속성을 포함하는 옵션
+module.exports = {
+  output: {
+    filename: '[name].bundle.js'
+  }
+};
+```
+
 ## module - 중간에 개입
+
+## loader - 자바스크립트가 아닌 웹 자원들을 변환할 수 있또록 도와주는 속성
+
+```js
+module: {
+  rules: [];
+}
+```
 
 # Babel
 
