@@ -1,19 +1,20 @@
-const path = require("path");
+var path = require("path");
+var MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  mode: "none", // production, development, production
+  mode: "none",
   entry: "./index.js",
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
   },
   module: {
-    //loader
     rules: [
       {
-        test: /\.css$/, //css파일에 대해서
-        use: ["style-loader", "css-loader"], //이로더를 적용하겠다.
+        test: /\.css$/,
+        use: [{ loader: MiniCssExtractPlugin.loader }, "css-loader"],
       },
     ],
   },
+  plugins: [new MiniCssExtractPlugin()], //결과물의 정보를 바꾸는 구나
 };
