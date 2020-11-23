@@ -19,6 +19,14 @@ npm -v
 
 ```bash
 npm i gulp //node_modules
+npm i --save-prod
+npm i -D
+
 npm i -g gulp //usr/local/lib/node_modules 에 설치 됩니다.
 npm uninstall gulp //uninstall
 ```
+
+3. dependencies vs devdependencies
+
+- dependencies 로직과 연동 - 직접 연관
+- devdependencies 개발 보조용

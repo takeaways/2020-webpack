@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/nomadGeonilJang/2020-webpack#readme",
   "devDependencies": {
-    "eslint": "^7.14.0"
+    "eslint": "^7.14.0",
+    "vue": "^2.6.12"
   },
   "dependencies": {
     "jquery": "^3.5.1",
