@@ -101,9 +101,10 @@ module.exports = {
 };
 ```
 
-## module - 중간에 개입
+## loader=module - 중간 개입 자바스크립트가 아닌 웹 자원들을 변환할 수 있또록 도와주는 속성
 
-## loader - 자바스크립트가 아닌 웹 자원들을 변환할 수 있또록 도와주는 속성
+- import "s.css" 하면 js 파일에 p{color:red} 가 들어 올 수 있게 도와주는것!! 이게 로더다
+- 로더는 오른쪽에서 왼쪽 으로 실행한다.⏪
 
 ```js
 module: {
@@ -111,6 +112,24 @@ module: {
 }
 ```
 
+## plugin - 항상 새로운 객체를 생성하는 배열에 넣어주는구나로 생각하자
+
+- 추가적인 기능을 제공
+- 결과물의 정보를 바꾸는 구나
+
 # Babel
 
 - 최대한 많은 호환을 위환 변환기
+
+# 코드 스플릿팅
+
+```
+npm i webpack webpack-cli css-loader style-loader mini-css-extract-plugin -D
+
+```
+
+# dev server
+
+```
+npm i webpack webpack-cli webpack-dev-server html-webpack-plugin -D
+```
