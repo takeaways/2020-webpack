@@ -37,6 +37,7 @@ npm uninstall gulp //uninstall
 1. 모듈 번들러
 
 - 웹 서비스 모든 파일을 하나의 파일로 합쳐버리겠다!
+  - 자원을 요청하는 네트워크 요청을 감소!
 - 자원을 조합해서 하나의 병합된 결과물을 만드는 도구
 
 > 웹팩이란 최신 프런트엔드 프레임워크에서 가장 많이 사용되는 모듈 번들러(Module Bundler)입니다. 모듈 번들러란 웹 애플리케이션을 구성하는 자원(HTML, CSS, Javscript, Images 등)을 모두 각각의 모듈로 보고 이를 조합해서 병합된 하나의 결과물을 만드는 도구를 의미합니다. 그럼 모듈과 모듈 번들링에 대해서 조금 더 살펴보겠습니다.
@@ -48,3 +49,6 @@ npm i webpack webpack-cli -D
 ```
 
 3. mode
+
+- mode development, none, production
+- webpack --mode=none
