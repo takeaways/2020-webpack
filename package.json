@@ -1,0 +1,22 @@
+{
+  "name": "2020-webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nomadGeonilJang/2020-webpack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nomadGeonilJang/2020-webpack/issues"
+  },
+  "homepage": "https://github.com/nomadGeonilJang/2020-webpack#readme",
+  "devDependencies": {
+    "eslint": "^7.14.0"
+  }
+}
