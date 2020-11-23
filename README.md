@@ -127,3 +127,9 @@ module: {
 npm i webpack webpack-cli css-loader style-loader mini-css-extract-plugin -D
 
 ```
+
+# dev server
+
+```
+npm i webpack webpack-cli webpack-dev-server html-webpack-plugin -D
+```
