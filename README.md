@@ -14,3 +14,11 @@
 node -v
 npm -v
 ```
+
+2. npm 사용
+
+```bash
+npm i gulp //node_modules
+npm i -g gulp //usr/local/lib/node_modules 에 설치 됩니다.
+npm uninstall gulp //uninstall
+```
