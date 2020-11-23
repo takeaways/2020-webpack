@@ -9,5 +9,11 @@ module.exports = {
     sourceType: "module",
   },
   rules: {},
-  ignorePatterns: ["dist", "gulpfile.js", "gulp/**/*", "webpack.config.js"],
+  ignorePatterns: [
+    ".eslintrc.js",
+    "dist",
+    "gulpfile.js",
+    "gulp/**/*",
+    "webpack.config.js",
+  ],
 };

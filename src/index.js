@@ -10,4 +10,5 @@ function component() {
   return element;
 }
 
+console.log("Helk");
 document.body.appendChild(component());
