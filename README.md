@@ -105,6 +105,8 @@ module.exports = {
 
 ## loader - 자바스크립트가 아닌 웹 자원들을 변환할 수 있또록 도와주는 속성
 
+- import "s.css" 하면 js 파일에 p{color:red} 가 들어 올 수 있게 도와주는것!! 이게 로더다
+
 ```js
 module: {
   rules: [];
@@ -114,3 +116,10 @@ module: {
 # Babel
 
 - 최대한 많은 호환을 위환 변환기
+
+# 코드 스플릿팅
+
+```
+npm i webpack webpack-cli css-loader style-loader mini-css-extract-plugin -D
+
+```
